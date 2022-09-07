@@ -4,6 +4,7 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+//@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 public class DemoUtilsTest {
 
     DemoUtils demoUtils;
@@ -11,8 +12,9 @@ public class DemoUtilsTest {
     @BeforeEach
     void setupBeforeEach(){
         demoUtils = new DemoUtils();
-        System.out.println("BeforeEach executes before the execution of each test method");
+        System.out.println("@BeforeEach executes before the execution of each test method");
     }
+
     @AfterEach
     void tearDownAfterEach(){
         System.out.println("Running @AfterEach");
@@ -21,13 +23,16 @@ public class DemoUtilsTest {
     @BeforeAll
     static void setupBeforeEachClass(){
         System.out.println("@BeforeAll executes only once before all test methods execution in the class");
+        System.out.println();
     }
 
     @AfterAll
     static void tearDownAfterAll(){
         System.out.println("@AfterAll executes only once after all test method execution in the class");
     }
+
     @Test
+    @DisplayName("Equals and Not Equals")
     void testEqualsAndNotEquals(){
 
         System.out.println("Running test: testEqualsAndNotEquals");
@@ -38,6 +43,7 @@ public class DemoUtilsTest {
     }
 
     @Test
+    @DisplayName("Null and Not Null")
     void testNullAndNotNull(){
 
         System.out.println("Running test: testEqualsAndNotEquals");
@@ -48,4 +54,6 @@ public class DemoUtilsTest {
         assertNull(demoUtils.checkNull(str1), "Object should be null");
         assertNotNull(demoUtils.checkNull(str2),"Object should not be null");
     }
+
+
 }
