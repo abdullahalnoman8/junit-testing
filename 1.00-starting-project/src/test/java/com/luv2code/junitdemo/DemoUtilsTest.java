@@ -121,4 +121,10 @@ public class DemoUtilsTest {
                 "Method should execute in 3 seconds");
     }
 
+    @Test
+    @DisplayName("Multiply")
+    void testMultiply(){
+        assertEquals(12,demoUtils.multiply(4,3), "4 * 3 must be 12");
+    }
+
 }
