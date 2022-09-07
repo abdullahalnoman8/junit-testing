@@ -2,6 +2,8 @@ package com.luv2code.junitdemo;
 
 import org.junit.jupiter.api.*;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 //@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
@@ -55,5 +57,49 @@ public class DemoUtilsTest {
         assertNotNull(demoUtils.checkNull(str2),"Object should not be null");
     }
 
+
+    @Test
+    @DisplayName("Same and Not Same")
+    void testSameAndNotSame(){
+        String str = "luv2code";
+        assertSame(demoUtils.getAcademy(),demoUtils.getAcademyDuplicate(), "Object should refer to the same object");
+
+        assertNotSame(str,demoUtils.getAcademy(),"Object should not refer to same object");
+
+    }
+
+    @DisplayName("True and False")
+    @Test
+    void testTrueFalse(){
+       int gradeOne = 10;
+       int gradeTwo = 5;
+
+       assertTrue(demoUtils.isGreater(gradeOne,gradeTwo), "This should return true");
+       assertFalse(demoUtils.isGreater(gradeTwo,gradeOne),"This should return false");
+    }
+
+    @DisplayName("Array Equals")
+    @Test
+    void testArrayEquals() {
+        String[] stringArray = {"A", "B", "C"};
+
+        assertArrayEquals(stringArray, demoUtils.getFirstThreeLettersOfAlphabet(), "Arrays should be the same");
+    }
+
+    @DisplayName("Iterable equals")
+    @Test
+    void testIterableEquals() {
+        List<String> theList = List.of("luv", "2", "code");
+
+        assertIterableEquals(theList, demoUtils.getAcademyInList(), "Expected list should be same as actual list");
+    }
+
+    @DisplayName("Lines match")
+    @Test
+    void testLinesMatch() {
+        List<String> theList = List.of("luv", "2", "code");
+
+        assertLinesMatch(theList, demoUtils.getAcademyInList(), "Lines should match");
+    }
 
 }
