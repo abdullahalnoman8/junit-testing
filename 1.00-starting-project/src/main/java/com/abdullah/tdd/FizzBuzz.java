@@ -1,4 +1,4 @@
-package com.luv2code.tdd;
+package com.abdullah.tdd;
 
 public class FizzBuzz {
 

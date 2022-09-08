@@ -1,4 +1,4 @@
-package com.luv2code.tdd;
+package com.abdullah.tdd;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
